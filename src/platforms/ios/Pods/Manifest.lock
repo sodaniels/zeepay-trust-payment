@@ -1,0 +1,61 @@
+PODS:
+  - BlueCryptor (1.0.32)
+  - BlueECC (1.2.5)
+  - BlueRSA (1.0.200)
+  - KIF (3.8.3):
+    - KIF/Core (= 3.8.3)
+  - KIF/Core (3.8.3)
+  - KituraContracts (1.2.1):
+    - LoggerAPI (~> 1.7)
+  - LoggerAPI (1.9.200):
+    - Logging (~> 1.1)
+  - Logging (1.4.0)
+  - Sentry (7.24.1):
+    - Sentry/Core (= 7.24.1)
+  - Sentry/Core (7.24.1)
+  - SeonSDK (3.0.6)
+  - SnapshotTesting (1.8.2)
+  - SwiftJWT (3.5.3):
+    - BlueCryptor (~> 1.0)
+    - BlueECC (~> 1.1)
+    - BlueRSA (~> 1.0)
+    - KituraContracts (~> 1.1)
+    - LoggerAPI (~> 1.7)
+
+DEPENDENCIES:
+  - KIF (= 3.8.3)
+  - Sentry (= 7.24.1)
+  - SeonSDK (= 3.0.6)
+  - SnapshotTesting (= 1.8.2)
+  - SwiftJWT (= 3.5.3)
+
+SPEC REPOS:
+  trunk:
+    - BlueCryptor
+    - BlueECC
+    - BlueRSA
+    - KIF
+    - KituraContracts
+    - LoggerAPI
+    - Logging
+    - Sentry
+    - SeonSDK
+    - SnapshotTesting
+    - SwiftJWT
+
+SPEC CHECKSUMS:
+  BlueCryptor: b0aee3d9b8f367b49b30de11cda90e1735571c24
+  BlueECC: 0d18e93347d3ec6d41416de21c1ffa4d4cd3c2cc
+  BlueRSA: dfeef51db96bcc4edec654956c1581adbda4e6a3
+  KIF: bf82151c1b5d960b526a043e35b4e339d95390ba
+  KituraContracts: e845e60dc8627ad0a76fa55ef20a45451d8f830b
+  LoggerAPI: ad9c4a6f1e32f518fdb43a1347ac14d765ab5e3d
+  Logging: beeb016c9c80cf77042d62e83495816847ef108b
+  Sentry: 1ed2d3f2973658bf6ab7ed43857c8e321a1625dd
+  SeonSDK: ec29f9194f0e53e078521edb50734a0dd091d4f4
+  SnapshotTesting: 38947050d13960d57a4a9c166fcf51bca7d56970
+  SwiftJWT: 9a47a71090cae25767078756b5810e3b630aa9a7
+
+PODFILE CHECKSUM: e1a5c6048195713efa5bfaf7782e0ba1a7ce374f
+
+COCOAPODS: 1.12.1

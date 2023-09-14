@@ -1,0 +1,34 @@
+{
+  "PayButton.title": "Pagar",
+  "PayButton.ataPayByBank": "Pay By Bank",
+
+  "DropInViewController.successfulPayment": "El pago se ha procesado correctamente",
+
+  "Errors.general": "Se ha producido un error",
+
+  "CardNumberInputView.title": "Número de tarjeta",
+  "CardNumberInputView.placeholder": "xxxx xxxx xxxx xxxx",
+  "CardNumberInputView.error": "Campo no válido",
+  "CardNumberInputView.emptyError": "Campo no válido",
+
+  "CVVInputView.title": "Código de seguridad",
+  "CVVInputView.placeholder3": "***",
+  "CVVInputView.placeholder4": "****",
+  "CVVInputView.error": "Campo no válido",
+  "CVVInputView.emptyError": "Campo no válido",
+
+  "ExpiryDateInputView.title": "Fecha de vencimiento",
+  "ExpiryDateInputView.placeholder": "MM/AA",
+  "ExpiryDateInputView.error": "Campo no válido",
+  "ExpiryDateInputView.emptyError": "Campo no válido",
+
+  "ExpiryDatePickerView.month": "Mes",
+  "ExpiryDatePickerView.year": "Año",
+  
+  "AddCardButton.title": "Agregar tarjeta",
+
+  "Alerts.processing": "Procesando",
+
+  "ChallengeView.headerTitle": "Pago seguro",
+  "ChallengeView.headerCancelTitle" : "Cancelar",
+}

@@ -1,0 +1,12 @@
+slather.configure("TrustPayments/TrustPayments.xcodeproj", "Development", options: {
+		workspace: "TrustPayments.xcworkspace"
+	}
+)
+slather.show_coverage
+
+xcov.report(
+	workspace: "TrustPayments.xcworkspace",
+	scheme: "TrustPayments3DSecureTests",
+	output_directory: "output",
+	xccov_file_direct_path: "./output/action.xccovreport"
+)

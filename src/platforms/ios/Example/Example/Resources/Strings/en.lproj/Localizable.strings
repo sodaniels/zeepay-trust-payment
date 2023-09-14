@@ -1,0 +1,146 @@
+/* 
+  Localizable.strings
+  Example
+*/
+
+PopBack.back = "back";
+
+MainViewController.title = "Example App - Main";
+MainViewController.enterBaseAmount = "Please enter the base amount";
+
+MainViewModel.makeAuthRequestButton = "Perform AUTH request in background";
+MainViewModel.showSingleInputViewsButton = "Single input components";
+MainViewModel.showDropInControllerButton = "Pay by Card form (3DSecure)";
+MainViewModel.makeAccountCheckRequestButton = "Perform 'Account check' request in background";
+MainViewModel.makeAccountCheckWithAuthRequestButton = "Perform Account check & Auth request in background";
+MainViewModel.addCardReferenceButton = "Add card (ACCOUNTCHECK)";
+MainViewModel.payWithWalletButton = "Stored cards";
+MainViewModel.presentWalletWithCardTypesToBypass = "Stored cards (RiskDec, card types to bypass)";
+MainViewModel.merchantResponsibility = "Merchant responsibility";
+MainViewModel.sdkResponsibility = "SDK responsibility";
+MainViewModel.subscriptionOnTPEngine = "Subscription (Trust Payments Engine)";
+MainViewModel.subscriptionOnMerchantEngine = "Recurring payments";
+MainViewModel.showDropInControllerNo3DSecure = "Pay by Card form (no 3DSecure)";
+MainViewModel.showDropInControllerWithCustomView = "Pay by Card form (3DSec, custom view)";
+MainViewModel.payByCardFromParentReference = "Pay by 400000######2008 card (3DSecure)";
+MainViewModel.payFillCVV = "Pay (Fill CVV)";
+MainViewModel.payByCustomForm = "Pay by custom form";
+MainViewModel.showDropInControllerWithCustomViewAndTip = "Pay by Card form (3DSec, custom view - add tip)";
+MainViewModel.showDropInControllerWithRiskDec = "Pay by Card form (3DSecure & RiskDec)";
+MainViewModel.showDropInControllerWithJWTUpdates = "Pay by Card (update JWT parameters)";
+MainViewModel.applePay = "Apple Pay ";
+MainViewModel.applePayWithTypeDescriptionSelection = "Apple Pay  (type descriptions selection)";
+MainViewModel.dropInControllerWithCardTypesToBypass = "Pay by Card form (RiskDec, card types to bypass)";
+MainViewModel.showStyleManagerInitView = "Show style manager initialization";
+MainViewModel.showDarkModeStyleManagerInitView = "Show dark mode style manager initialization";
+MainViewModel.performThreeDQueryV2AndLaterAuth = "Perform 3DQuery V2 and later AUTH (forwarding threedresponse in payload)";
+MainViewModel.performThreeDQueryV1AndLaterAuth = "Perform 3DQuery V1 and later AUTH (forwarding pares in payload)";
+MainViewModel.performAccountCheckThreeDQueryV2AndLaterAuth = "Perform ACCOUNTCHECK & 3DQuery V2 and later AUTH (forwarding threedresponse in payload)";
+MainViewModel.performAccountCheckThreeDQueryV1AndLaterAuth = "Perform ACCOUNTCHECK & 3DQuery V1 and later AUTH (forwarding pares in payload)";
+MainViewModel.performAuthZIP = "Perform AUTH request in background (ZIP)";
+MainViewModel.showDropInControllerWithZIP = "Pay by Card form (ZIP)";
+MainViewModel.performAuthATA = "Perform AUTH request in background (ATA)";
+MainViewModel.showDropInControllerWithATA = "Pay by Card form (ATA)";
+
+Alerts.okButton = "Ok";
+Alerts.successfulPayment = "Successful payment transaction";
+
+SingleInputViewsController.title = "Single input views";
+
+WalletViewController.title = "Wallet";
+
+WalletViewModel.addPaymentMethod = "Add Payment method";
+WalletViewModel.paymentMethods = "PAYMENT METHODS";
+WalletViewModel.infoText = "Tap the card you wish to pay with and click the 'Next' button";
+
+AddCardViewController.title = "Add card";
+AddCardViewController.cardAdded = "The card has been added";
+
+SaveCardOptionView.title = "Save this card for future use";
+
+DropInCustomViewWithTipOption.tip = "of tip";
+DropInCustomViewWithTipOption.total = "total:";
+
+CustomPaymentFormViewController.title = "Custom form";
+CustomPaymentFormViewController.successfulPayment = "Successful payment transaction";
+
+DropInCustomViewWithPayloadParameters.deliveryCountyTitle = "Delivery county";
+DropInCustomViewWithPayloadParameters.deliveryCountyPlaceholder = "delivery county";
+DropInCustomViewWithPayloadParameters.deliveryCountyEmptyError = "you have entered the iso code, so you also have to provide the county";
+DropInCustomViewWithPayloadParameters.deliveryCountryIsoTitle = "Delivery country iso";
+DropInCustomViewWithPayloadParameters.deliveryCountryIsoPlaceholder = "delivery country iso";
+DropInCustomViewWithPayloadParameters.deliveryCountryIsoEmptyError = "you have entered the county, so you also have to provide the iso code (2 characters e.g. GB)";
+DropInCustomViewWithPayloadParameters.deliveryCountryIsoError = "you have to enter 2 characters (e.g. GB)";
+DropInCustomViewWithPayloadParameters.deliveryZipCodeTitle = "Delivery zip code";
+DropInCustomViewWithPayloadParameters.deliveryZipCodePlaceholder = "delivery zip code";
+DropInCustomViewWithPayloadParameters.deliveryCityTitle = "Delivery city";
+DropInCustomViewWithPayloadParameters.deliveryCityPlaceholder = "delivery city";
+DropInCustomViewWithPayloadParameters.deliveryAddressTitle = "Delivery address";
+DropInCustomViewWithPayloadParameters.deliveryAddressPlaceholder = "delivery address";
+DropInCustomViewWithPayloadParameters.deliveryNameTitle = "Delivery name";
+DropInCustomViewWithPayloadParameters.deliveryNamePlaceholder = "delivery name";
+
+DropInCustomViewWithPayloadParameters.billingCountyTitle = "Billing county";
+DropInCustomViewWithPayloadParameters.billingCountyPlaceholder = "billing county";
+DropInCustomViewWithPayloadParameters.billingCountyEmptyError = "you have entered the iso code, so you also have to provide the county";
+DropInCustomViewWithPayloadParameters.billingCountryIsoTitle = "Billing country iso";
+DropInCustomViewWithPayloadParameters.billingCountryIsoPlaceholder = "billing country iso";
+DropInCustomViewWithPayloadParameters.billingCountryIsoEmptyError = "you have entered the county, so you also have to provide the iso code (2 characters e.g. GB)";
+DropInCustomViewWithPayloadParameters.billingCountryIsoError = "you have to enter 2 characters (e.g. GB)";
+DropInCustomViewWithPayloadParameters.billingZipCodeTitle = "Billing zip code";
+DropInCustomViewWithPayloadParameters.billingZipCodePlaceholder = "billing zip code";
+DropInCustomViewWithPayloadParameters.billingCityTitle = "Billing city";
+DropInCustomViewWithPayloadParameters.billingCityPlaceholder = "billing city";
+DropInCustomViewWithPayloadParameters.billingAddressTitle = "Billing address";
+DropInCustomViewWithPayloadParameters.billingAddressPlaceholder = "billing address";
+DropInCustomViewWithPayloadParameters.billingNameTitle = "Billing name";
+DropInCustomViewWithPayloadParameters.billingNamePlaceholder = "billing name";
+
+DropInCustomViewWithPayloadParameters.deliveryData = "Delivery data";
+DropInCustomViewWithPayloadParameters.billingData = "Billing data";
+
+DropInCustomViewWithPayloadParameters.changeCurrency = "Currency code";
+DropInCustomViewWithPayloadParameters.changeAmount = "Amount option";
+
+DropInCustomViewWithPayloadParameters.amountInputViewError = "Invalid amount";
+DropInCustomViewWithPayloadParameters.amountInputViewEmptyError = "Provide the amount";
+DropInCustomViewWithPayloadParameters.amountInputViewTitle = "Amount";
+DropInCustomViewWithPayloadParameters.amountInputViewPlaceholder = "amount";
+
+SelectCardTypesViewController.title = "Select card types to bypass";
+
+StyleManagerInitializationViewModel.dropInStyleManager = "Drop In Style Manager";
+StyleManagerInitializationViewModel.payButtonStyleManager = "Pay Button Style Manager";
+StyleManagerInitializationViewModel.inputViewStyleManager = "Input View Style Manager";
+StyleManagerInitializationViewModel.toolbarStyleManager = "Cardinal - Toolbar Style Manager";
+StyleManagerInitializationViewModel.labelStyleManager = "Cardinal - Label Style Manager";
+StyleManagerInitializationViewModel.verifyButtonStyleManager = "Cardinal - Verify Button Style Manager";
+StyleManagerInitializationViewModel.continueButtonStyleManager = "Cardinal - Continue Button Style Manager";
+StyleManagerInitializationViewModel.resendButtonStyleManager = "Cardinal - Resend Button Style Manager";
+StyleManagerInitializationViewModel.textBoxStyleManager = "Cardinal - Text Box Style Manager";
+StyleManagerInitializationViewController.title = "Style Manager";
+StyleManagerInitializationViewController.darkModeTitle = "Dark Mode Style Manager";
+StyleManagerInitializationViewController.enterNewSize = "Enter new value";
+StyleManagerInitializationViewController.enterNewSizeTopBottom = "Enter new size (top, bottom)";
+StyleManagerInitializationViewController.enterNewEdgeInsets = "Enter new size (top, left, bottom, right)";
+StyleManagerInitializationViewController.enterNewText = "Enter new text";
+StyleManagerInitializationViewController.top = "top";
+StyleManagerInitializationViewController.left = "left";
+StyleManagerInitializationViewController.bottom = "bottom";
+StyleManagerInitializationViewController.right = "right";
+
+ColorPickerViewController.title = "Select color";
+ColorPickerViewController.selectButton = "Select";
+ColorPickerViewController.cancelButton = "Cancel";
+
+ColorPickerView.title = "Selected color";
+
+FontPickerViewController.title = "Choose font";
+FontPickerViewController.cancelButton = "Cancel";
+
+SelectTypeDescriptionsViewController.title = "Select type descriptions";
+SelectTypeDescriptionsViewModel.typeDescriptionsHeaderText = "Please note: in cases where you only specify THREEDQUERY as a request type, Apple Pay won't be an allowed payment method.
+
+If you specify THREEDQUERY & AUTH in the SDK request types, then THREEDQUERY will be excluded for all Apple Pay payments.";
+
+NextButton.title = "Next";

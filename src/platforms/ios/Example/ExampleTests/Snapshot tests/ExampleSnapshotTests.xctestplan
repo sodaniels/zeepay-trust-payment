@@ -1,0 +1,68 @@
+{
+  "configurations" : [
+    {
+      "id" : "1050A84D-C753-4A2A-8198-F1129EF10CDF",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:..\/TrustPayments\/TrustPayments.xcodeproj",
+          "identifier" : "08E4FA692462A5EC00837339",
+          "name" : "TrustPaymentsCore"
+        },
+        {
+          "containerPath" : "container:..\/TrustPayments\/TrustPayments.xcodeproj",
+          "identifier" : "08EF7D3D2462B12F008B5F3E",
+          "name" : "TrustPaymentsUI"
+        },
+        {
+          "containerPath" : "container:..\/TrustPayments\/TrustPayments.xcodeproj",
+          "identifier" : "104CFB08246ECD7F00D7C76D",
+          "name" : "TrustPayments3DSecure"
+        },
+        {
+          "containerPath" : "container:..\/TrustPayments\/TrustPayments.xcodeproj",
+          "identifier" : "1092CF3E2476CA1F0002B2E8",
+          "name" : "TrustPaymentsCard"
+        }
+      ]
+    },
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "-isTesting YES"
+      }
+    ]
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : [
+        "TestDropInViewController\/test_dropInViewController()",
+        "TestDropInViewController\/test_dropInViewControllerInDarkMode()",
+        "TestDropInViewController\/test_dropInViewWithOnlyApplePayConfiguration()",
+        "TestTranslationsDropInViewController\/test_controllerInAmericanEnglish()",
+        "TestTranslationsDropInViewController\/test_controllerInBritishEnglish()",
+        "TestTranslationsDropInViewController\/test_controllerInDanish()",
+        "TestTranslationsDropInViewController\/test_controllerInDutch()",
+        "TestTranslationsDropInViewController\/test_controllerInFrench()",
+        "TestTranslationsDropInViewController\/test_controllerInGerman()",
+        "TestTranslationsDropInViewController\/test_controllerInItalian()",
+        "TestTranslationsDropInViewController\/test_controllerInNorwegian()",
+        "TestTranslationsDropInViewController\/test_controllerInSpanish()",
+        "TestTranslationsDropInViewController\/test_controllerInSwedish()",
+        "TestTranslationsDropInViewController\/test_controllerInWelsh()"
+      ],
+      "target" : {
+        "containerPath" : "container:Example.xcodeproj",
+        "identifier" : "08E4FA932462A7D800837339",
+        "name" : "ExampleTests"
+      }
+    }
+  ],
+  "version" : 1
+}

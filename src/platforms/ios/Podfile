@@ -1,0 +1,49 @@
+workspace 'TrustPayments'
+inhibit_all_warnings!
+platform :ios, '11.0'
+use_frameworks!
+
+def shared_pods 
+    pod 'SwiftJWT', '3.5.3'
+    pod 'Sentry', '7.24.1'
+    pod 'SeonSDK', '3.0.6'
+end
+
+def shared_pods_tests 
+    shared_pods
+    pod 'KIF', '3.8.3'
+    pod 'SnapshotTesting', '1.8.2'
+end
+
+target 'Example' do
+    shared_pods
+    project 'Example/Example.xcodeproj'
+end
+
+target 'ExampleUITests' do
+    shared_pods
+    project 'Example/Example.xcodeproj'
+end
+
+target 'ExampleZIPUITests' do
+    shared_pods
+    project 'Example/Example.xcodeproj'
+end
+
+target 'ExampleTests' do
+    shared_pods_tests
+    project 'Example/Example.xcodeproj'
+end
+
+# plugin 'cocoapods-keys', {
+#     :project => "TrustPayments",
+#     :keys => [
+#       "JWTSecret",
+#       "MERCHANT_USERNAME",
+#       "MERCHANT_SITEREFERENCE",
+#       "WS_USERNAME",
+#       "WS_PASSWORD",
+#       "WS_SITEREFERENCE",
+#       "PASSCODE"
+#    ]
+# }

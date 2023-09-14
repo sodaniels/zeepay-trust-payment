@@ -1,0 +1,49 @@
+# #!/bin/bash
+# Set up eu configuration envs
+source euEnvs
+chmod 700 euEnvs
+./euEnvs
+
+# Removing stored keys from the Keychain
+echo "Removing previous secrets from the Keychain"
+security delete-generic-password -a "JWTSecret" &> /dev/null
+security delete-generic-password -a "MERCHANT_USERNAME" &> /dev/null
+security delete-generic-password -a "MERCHANT_SITEREFERENCE" &> /dev/null
+
+# Add new keys to the Keychain
+echo "Setting default secrets in the Keychain"
+security add-generic-password -a "JWTSecret" -D "application password" -s "cocoapods-keys-Example" -T "/usr/bin/ruby" -w $TP_JWT
+security add-generic-password -a "MERCHANT_USERNAME" -D "application password" -s "cocoapods-keys-Example" -T "/usr/bin/ruby" -w $TP_USERNAME
+security add-generic-password -a "MERCHANT_SITEREFERENCE" -D "application password" -s "cocoapods-keys-Example" -T "/usr/bin/ruby" -w $TP_SITEREF
+
+# Paths
+DIR=$(cd ../ && pwd)
+INFO_PATH=$DIR/Example/Example/SupportingFiles/Info.plist
+APP_DELEGATE_PATH=$DIR/Example/Example/Source\ Files/Application/AppDelegate.swift
+
+#Remove App Transport Security keys
+if $(/usr/libexec/PlistBuddy -c 'Print NSAppTransportSecurity:NSAllowsArbitraryLoads bool' $INFO_PATH &> /dev/null); then
+    echo "Removing App Transport Security key"
+    $(/usr/libexec/PlistBuddy -c 'Delete NSAppTransportSecurity' $INFO_PATH)
+else
+    echo "App Transport Security key already removed"
+fi
+
+# Replace the gateway type to eu
+$(sed -i '' 's/gateway: .devbox/gateway: .eu/g' "$APP_DELEGATE_PATH")
+
+echo "Removing web services hosts from /etc/hosts file"
+$(sudo sed -i '' /$TP_WEBSERVS_HOST/d /etc/hosts)
+
+echo "Removing payment pages hosts from /etc/hosts file"
+$(sudo sed -i '' /$TP_PAYMTPAGES_HOST/d /etc/hosts)
+
+# Clean the project
+echo "Cleaning project"
+cd .. && /usr/bin/xcodebuild clean -workspace TrustPayments.xcworkspace -scheme Development
+
+# Run pod install
+echo "Running pod install"
+pod install
+
+echo "Finished setting up eu configuration"

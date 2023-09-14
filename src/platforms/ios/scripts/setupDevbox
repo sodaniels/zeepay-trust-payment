@@ -1,0 +1,52 @@
+#!/bin/bash
+# Set up dev box configuration envs
+source devboxEnvs
+chmod 700 devboxEnvs
+./devboxEnvs
+
+# there may be a need to remove this directory /.cocoapods/keys
+
+# Removing stored keys from the Keychain
+echo "Removing previous secrets from the Keychain"
+security delete-generic-password -a "JWTSecret" &> /dev/null
+security delete-generic-password -a "MERCHANT_USERNAME" &> /dev/null
+security delete-generic-password -a "MERCHANT_SITEREFERENCE" &> /dev/null
+
+# Adding new keys to the Keychain
+echo "Setting new secrets in the Keychain"
+security add-generic-password -a "JWTSecret" -D "application password" -s "cocoapods-keys-Example" -T "/usr/bin/ruby" -w $TP_JWT
+security add-generic-password -a "MERCHANT_USERNAME" -D "application password" -s "cocoapods-keys-Example" -T "/usr/bin/ruby" -w $TP_USERNAME
+security add-generic-password -a "MERCHANT_SITEREFERENCE" -D "application password" -s "cocoapods-keys-Example" -T "/usr/bin/ruby" -w $TP_SITEREF
+
+# Paths
+DIR=$(cd ../ && pwd)
+INFO_PATH=$DIR/Example/Example/SupportingFiles/Info.plist
+APP_DELEGATE_PATH=$DIR/Example/Example/Source\ Files/Application/AppDelegate.swift
+
+# Adding App Transport Security keys
+if $(/usr/libexec/PlistBuddy -c 'Print NSAppTransportSecurity:NSAllowsArbitraryLoads bool' $INFO_PATH &> /dev/null); then
+    echo "App Security Settings already set"
+else
+    echo "Setting Allow Arbitraty Loads to True"
+    $(/usr/libexec/PlistBuddy -c 'Add :NSAppTransportSecurity:NSAllowsArbitraryLoads bool YES' $INFO_PATH &> /dev/null)
+fi
+
+# Replacing gateway type in the App delegate file, where the TP init is called
+echo "Replacing gateway type"
+$(sed -i '' 's/gateway: .eu/gateway: .devbox/g' "$APP_DELEGATE_PATH")
+
+echo "Setting dev box ip into /etc/hosts file"
+sudo -- bash -c 'echo "'$TP_WEBSERVS_HOST' webservices.securetrading.net" >> /etc/hosts'
+
+echo "Setting payments pages ip into /etc/hosts file"
+sudo -- bash -c 'echo "'$TP_PAYMTPAGES_HOST' payments.securetrading.net" >> /etc/hosts'
+
+# Clean the project
+echo "Cleaning project"
+cd .. && /usr/bin/xcodebuild clean -workspace TrustPayments.xcworkspace -scheme Development
+
+# Run pod install
+echo "Running pod install"
+pod install
+
+echo "Finished setting up dev box configuration"

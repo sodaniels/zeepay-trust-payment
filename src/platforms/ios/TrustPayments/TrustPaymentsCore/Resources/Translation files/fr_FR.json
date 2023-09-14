@@ -1,0 +1,34 @@
+{
+  "PayButton.title": "Payer",
+  "PayButton.ataPayByBank": "Pay By Bank",
+
+  "DropInViewController.successfulPayment": "Le paiement a été traité avec succès",
+
+  "Errors.general": "Une erreur est survenue",
+
+  "CardNumberInputView.title": "Numéro de carte",
+  "CardNumberInputView.placeholder": "xxxx xxxx xxxx xxxx",
+  "CardNumberInputView.error": "Champ incorrect",
+  "CardNumberInputView.emptyError": "Champ incorrect",
+
+  "CVVInputView.title": "Code de sécurité",
+  "CVVInputView.placeholder3": "***",
+  "CVVInputView.placeholder4": "****",
+  "CVVInputView.error": "Champ incorrect",
+  "CVVInputView.emptyError": "Champ incorrect",
+
+  "ExpiryDateInputView.title": "Date d'expiration",
+  "ExpiryDateInputView.placeholder": "MM/AA",
+  "ExpiryDateInputView.error": "Champ incorrect",
+  "ExpiryDateInputView.emptyError": "Champ incorrect",
+
+  "ExpiryDatePickerView.month": "Mois",
+  "ExpiryDatePickerView.year": "An",
+  
+  "AddCardButton.title": "Ajouter une carte",
+
+  "Alerts.processing": "Traitement en cours",
+
+  "ChallengeView.headerTitle": "Paiement sécurisé",
+  "ChallengeView.headerCancelTitle" : "Annuler",
+}

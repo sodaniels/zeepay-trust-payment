@@ -1,0 +1,12 @@
+//
+//  Development.xcconfig
+//  Example
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "App-Base.xcconfig"
+#include "../../Pods/Target Support Files/Pods-Example/Pods-Example.development.xcconfig"
+
+__PRODUCT_BUNDLE_IDENTIFIER_SUFFIX = .TrustPaymentsSDKExampleApp

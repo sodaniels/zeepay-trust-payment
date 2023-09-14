@@ -1,0 +1,34 @@
+{
+  "PayButton.title": "Betalen",
+  "PayButton.ataPayByBank": "Pay By Bank",
+
+  "DropInViewController.successfulPayment": "De betaling is verwerkt",
+
+  "Errors.general": "Er is iets misgegaan",
+
+  "CardNumberInputView.title": "Kaartnummer",
+  "CardNumberInputView.placeholder": "xxxx xxxx xxxx xxxx",
+  "CardNumberInputView.error": "Ongeldig veld",
+  "CardNumberInputView.emptyError": "Ongeldig veld",
+
+  "CVVInputView.title": "Beveiligingscode",
+  "CVVInputView.placeholder3": "***",
+  "CVVInputView.placeholder4": "****",
+  "CVVInputView.error": "Ongeldig veld",
+  "CVVInputView.emptyError": "Ongeldig veld",
+
+  "ExpiryDateInputView.title": "Vervaldatum",
+  "ExpiryDateInputView.placeholder": "MM/JJ",
+  "ExpiryDateInputView.error": "Ongeldig veld",
+  "ExpiryDateInputView.emptyError": "Ongeldig veld",
+
+  "ExpiryDatePickerView.month": "Maand",
+  "ExpiryDatePickerView.year": "Jaar",
+  
+  "AddCardButton.title": "Voeg een kaart toe",
+
+  "Alerts.processing": "Bezig met verwerken",
+
+  "ChallengeView.headerTitle": "Veilige betaling",
+  "ChallengeView.headerCancelTitle" : "annuleren",
+}

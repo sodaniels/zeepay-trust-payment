@@ -1,0 +1,34 @@
+{
+  "PayButton.title": "Betala",
+  "PayButton.ataPayByBank": "Pay By Bank",
+
+  "DropInViewController.successfulPayment": "Betalningen lyckades",
+
+  "Errors.general": "Ett fel inträffade",
+
+  "CardNumberInputView.title": "Kortnummer",
+  "CardNumberInputView.placeholder": "xxxx xxxx xxxx xxxx",
+  "CardNumberInputView.error": "Ogiltigt fält",
+  "CardNumberInputView.emptyError": "Ogiltigt fält",
+
+  "CVVInputView.title": "Säkerhetskod",
+  "CVVInputView.placeholder3": "***",
+  "CVVInputView.placeholder4": "****",
+  "CVVInputView.error": "Ogiltigt fält",
+  "CVVInputView.emptyError": "Ogiltigt fält",
+
+  "ExpiryDateInputView.title": "Sista giltighetsdatum",
+  "ExpiryDateInputView.placeholder": "MM/ÅÅ",
+  "ExpiryDateInputView.error": "Ogiltigt fält",
+  "ExpiryDateInputView.emptyError": "Ogiltigt fält",
+
+  "ExpiryDatePickerView.month": "Månad",
+  "ExpiryDatePickerView.year": "År",
+  
+  "AddCardButton.title": "Lägg till kort",
+
+  "Alerts.processing": "Bearbetar",
+
+  "ChallengeView.headerTitle": "Säker utcheckning",
+  "ChallengeView.headerCancelTitle" : "Annullera",
+}

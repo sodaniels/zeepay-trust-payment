@@ -1,0 +1,240 @@
+#!/bin/bash
+# Set up BB8 configuration envs
+
+function load_envs() {
+    if [ ! -f "$1" ]; then
+        echo "File $1 does not exists in this directory."
+        exit 1
+    fi
+    source $1
+    chmod 700 $1
+    ./$1
+} 
+
+function store_us_pswd() {
+    echo "Enter sudo password:"
+    read -s su_pswd
+    security delete-generic-password -a "su_pswd" &> /dev/null
+    security add-generic-password -s 'TP CLI'  -a 'su_pswd' -w $su_pswd
+}
+
+function validate_provider() {
+    provider=$1
+    if [ "$provider" = "tp" ]; then
+        echo "Using Trust Payments as 3D Provider"
+        site_ref=$TP_SITEREF
+    elif [ "$provider" = "cc" ]; then
+        echo "Using Cardinal Commerce as 3D Provider"
+        site_ref=$CC_SITEREF
+    else
+        echo "Unknown 3D provider"
+        exit 1
+    fi
+}
+
+function validate_site_reference_type() {
+    site_ref_type=$1
+    if [ "$site_ref_type" = "live" ]; then
+        echo "Using LIVE site reference"
+        if [ "$provider" = "tp" ]; then
+            site_ref=$TP_LIVE_SITEREF
+        elif [ "$provider" = "cc" ]; then
+            site_ref=$CC_LIVE_SITEREF
+        else
+            echo "Unknown 3D provider"
+            exit 1
+        fi
+    elif [ "$site_ref_type" = "test" ]; then
+        echo "Using TEST site reference"
+        if [ "$provider" = "tp" ]; then
+            site_ref=$TP_SITEREF
+        elif [ "$provider" = "cc" ]; then
+            site_ref=$CC_SITEREF
+        else
+            echo "Unknown 3D provider"
+            exit 1
+        fi
+    else
+        echo "Unknown site reference type"
+        exit 1
+    fi
+}
+
+if [ -z "$1" ]; then
+    echo "What would you like to do:\n1: Setup BB8\n2: Setup devbox\n3: Restore eu credentials\n4: Store su password in keychain\n\nType option number (eg: 1)"
+    read config_option
+elif [ -z $(security find-generic-password -w -s 'TP CLI' -a 'su_pswd') ]; then
+    store_us_pswd
+    config_option=$1
+else
+    config_option=$1
+fi
+
+if [ "$config_option" = "1" ]; then
+    echo "Setup BB8"
+    load_envs "bb8Envs"
+
+    if [[ "$2" && "$3" ]]; then
+        validate_provider $2
+        validate_site_reference_type $3
+    else
+        if [ -z "$2" ]; then
+            echo "\nWhich 3D provider you want to use?\ntp: Trust Payments\ncc: Cardinal Commerce\n\nType option (eg: tp)"
+            read site_ref
+            validate_provider $site_ref
+        else
+            validate_provider $2
+        fi
+
+        if [ -z "$3" ]; then
+            echo "\nWhat type of site reference do you want to use?\nLive: live\nTest: test\n\nType option (eg: live)"
+            read site_ref_type
+            validate_site_reference_type $site_ref_type
+        else
+            validate_site_reference_type $3
+        fi
+    fi
+elif [ "$config_option" = "2" ]; then
+    echo "Setup Devbox"
+    load_envs "devboxEnvs"
+    site_ref=$TP_SITEREF
+elif [ "$config_option" = "3" ]; then
+    echo "Restore eu credentials"
+    load_envs "euEnvs"
+    site_ref=$TP_SITEREF
+elif [ "$config_option" = "4" ]; then
+    store_us_pswd
+    exit 0
+else
+    echo "Unknown configuration option"
+    exit 1
+fi
+
+# there may be a need to remove this directory /.cocoapods/keys
+
+# Removing stored keys from the Keychain
+echo "Removing previous secrets from the Keychain"
+security delete-generic-password -a "JWTSecret" &> /dev/null
+security delete-generic-password -a "MERCHANT_USERNAME" &> /dev/null
+security delete-generic-password -a "MERCHANT_SITEREFERENCE" &> /dev/null
+
+security delete-generic-password -a "WS_USERNAME" &> /dev/null
+security delete-generic-password -a "WS_PASSWORD" &> /dev/null
+security delete-generic-password -a "WS_SITEREFERENCE" &> /dev/null
+security delete-generic-password -a "PASSCODE" &> /dev/null
+
+# Adding new keys to the Keychain
+echo "Setting new secrets in the Keychain"
+
+# In case you are using non-system version of ruby (e.g. installed via brew rbenv), add the additional ruby path to each 'security add-generic-password', e.g. -T "/Users/$(whoami)/.rbenv/versions/2.7.2/ruby" (don't worry about warnings)
+security add-generic-password -a "JWTSecret" -D "application password" -s "cocoapods-keys-Example" -w $TP_JWT -T "/usr/bin/ruby" #-T "/Users/$(whoami)/.rbenv/versions/2.7.2/ruby"
+security add-generic-password -a "MERCHANT_USERNAME" -D "application password" -s "cocoapods-keys-Example" -w $TP_USERNAME -T "/usr/bin/ruby" #-T "/Users/$(whoami)/.rbenv/versions/2.7.2/ruby"
+security add-generic-password -a "MERCHANT_SITEREFERENCE" -D "application password" -s "cocoapods-keys-Example" -w $site_ref -T "/usr/bin/ruby" #-T "/Users/$(whoami)/.rbenv/versions/2.7.2/ruby"
+
+security add-generic-password -a "WS_USERNAME" -D "application password" -s "cocoapods-keys-Example" -w $WS_USERNAME -T "/usr/bin/ruby" #-T "/Users/$(whoami)/.rbenv/versions/2.7.2/ruby"
+security add-generic-password -a "WS_PASSWORD" -D "application password" -s "cocoapods-keys-Example" -w $WS_PASSWORD -T "/usr/bin/ruby" #-T "/Users/$(whoami)/.rbenv/versions/2.7.2/ruby"
+security add-generic-password -a "WS_SITEREFERENCE" -D "application password" -s "cocoapods-keys-Example" -w $WS_SITEREFERENCE -T "/usr/bin/ruby" #-T "/Users/$(whoami)/.rbenv/versions/2.7.2/ruby"
+security add-generic-password -a "PASSCODE" -D "application password" -s "cocoapods-keys-Example" -w $PASSCODE -T "/usr/bin/ruby" #-T "/Users/$(whoami)/.rbenv/versions/2.7.2/ruby"
+
+cd ..
+
+bundle exec pod keys set JWTSecret $TP_JWT Example
+bundle exec pod keys set MERCHANT_USERNAME $TP_USERNAME Example
+bundle exec pod keys set MERCHANT_SITEREFERENCE $site_ref Example
+
+bundle exec pod keys set WS_USERNAME $WS_USERNAME Example
+bundle exec pod keys set WS_PASSWORD $WS_PASSWORD Example
+bundle exec pod keys set WS_SITEREFERENCE $WS_SITEREFERENCE Example
+bundle exec pod keys set PASSCODE $PASSCODE Example
+
+cd IntegrationExamples/CocoapodsIntegration
+
+bundle exec pod keys set JWTSecret $TP_JWT CocoapodsIntegration
+bundle exec pod keys set MERCHANT_USERNAME $TP_USERNAME CocoapodsIntegration
+bundle exec pod keys set MERCHANT_SITEREFERENCE $site_ref CocoapodsIntegration
+
+bundle exec pod keys set WS_USERNAME $WS_USERNAME CocoapodsIntegration
+bundle exec pod keys set WS_PASSWORD $WS_PASSWORD CocoapodsIntegration
+bundle exec pod keys set WS_SITEREFERENCE $WS_SITEREFERENCE CocoapodsIntegration
+bundle exec pod keys set PASSCODE $PASSCODE CocoapodsIntegration
+
+cd ../CarthageIntegration
+
+bundle exec pod keys set JWTSecret $TP_JWT CarthageIntegration
+bundle exec pod keys set MERCHANT_USERNAME $TP_USERNAME CarthageIntegration
+bundle exec pod keys set MERCHANT_SITEREFERENCE $site_ref CarthageIntegration
+
+bundle exec pod keys set WS_USERNAME $WS_USERNAME CarthageIntegration
+bundle exec pod keys set WS_PASSWORD $WS_PASSWORD CarthageIntegration
+bundle exec pod keys set WS_SITEREFERENCE $WS_SITEREFERENCE CarthageIntegration
+bundle exec pod keys set PASSCODE $PASSCODE CarthageIntegration
+
+cd ../../scripts
+
+# Paths
+DIR=$(cd ../ && pwd)
+INFO_PATH=$DIR/Example/Example/SupportingFiles/Info.plist
+APP_DELEGATE_PATH=$DIR/Example/Example/Source\ Files/Application/AppDelegate.swift
+
+if [ "$config_option" = "3" ]; then
+    # Restore EU -> remove arbitrary loads and set eu gatway type
+    # Remove App Transport Security keys
+    if $(/usr/libexec/PlistBuddy -c 'Print NSAppTransportSecurity:NSAllowsArbitraryLoads bool' $INFO_PATH &> /dev/null); then
+        echo "Removing App Transport Security key"
+        $(/usr/libexec/PlistBuddy -c 'Delete NSAppTransportSecurity' $INFO_PATH)
+    else
+        echo "App Transport Security key already removed"
+    fi
+    echo "Restoring gateway type to eu"
+    $(sed -i '' 's/gateway: .devbox/gateway: .eu/g' "$APP_DELEGATE_PATH")
+
+    echo "Removing hosts file entries: /etc/hosts"
+
+    su_pswd=$(security find-generic-password -w -s 'TP CLI' -a 'su_pswd')
+
+    if [ -z "$su_pswd" ]; then
+        echo "Sudo password could not be found in the keychain."
+        exit 1
+    fi
+
+    $(echo $su_pswd | sudo -S sed -i '' /securetrading/d /etc/hosts)
+    $(echo $su_pswd | sudo -S sed -i '' /thirdparty/d /etc/hosts)
+
+else 
+    su_pswd=$(security find-generic-password -w -s 'TP CLI' -a 'su_pswd')
+
+    if [ -z "$su_pswd" ]; then
+        echo "Sudo password could not be found in the keychain."
+        exit 1
+    fi
+
+    # Adding App Transport Security keys
+    if $(/usr/libexec/PlistBuddy -c 'Print NSAppTransportSecurity:NSAllowsArbitraryLoads bool' $INFO_PATH &> /dev/null); then
+        echo "App Security Settings already set"
+    else
+        echo "Setting Allow Arbitraty Loads to True"
+        $(/usr/libexec/PlistBuddy -c 'Add :NSAppTransportSecurity:NSAllowsArbitraryLoads bool YES' $INFO_PATH &> /dev/null)
+    fi
+    # Replacing gateway type in the App delegate file, where the TP init is called
+    echo "Replacing gateway type"
+    $(sed -i '' 's/gateway: .eu/gateway: .devbox/g' "$APP_DELEGATE_PATH")
+    echo "Setting hosts file: /etc/hosts"
+    IFS=';'
+    read -a hosts <<< "$TP_HOSTS"
+    echo "\n"
+    
+    $(echo $su_pswd | sudo -S sed -i '' /securetrading/d /etc/hosts)
+    $(echo $su_pswd | sudo -S sed -i '' /thirdparty/d /etc/hosts)
+
+    for host in "${hosts[@]}";
+    do
+        echo "$host" | sudo -S tee -a /etc/hosts > /dev/null
+    done
+fi
+
+# Clean the project
+echo "Cleaning project"
+cd .. && /usr/bin/xcodebuild clean -workspace TrustPayments.xcworkspace -scheme Development
+
+echo "Finished setting up configuration"
+echo "\n\n!!! Run 'pod install' !!!"

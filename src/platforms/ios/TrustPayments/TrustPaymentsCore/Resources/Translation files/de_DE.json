@@ -1,0 +1,34 @@
+{
+  "PayButton.title": "Zahlen",
+  "PayButton.ataPayByBank": "Pay By Bank",
+
+  "DropInViewController.successfulPayment": "Zahlung wurde erfolgreich verarbeitet",
+
+  "Errors.general": "Ein Fehler ist aufgetreten",
+
+  "CardNumberInputView.title": "Kartennummer",
+  "CardNumberInputView.placeholder": "xxxx xxxx xxxx xxxx",
+  "CardNumberInputView.error": "Ungültiges Feld",
+  "CardNumberInputView.emptyError": "Ungültiges Feld",
+
+  "CVVInputView.title": "Sicherheitscode",
+  "CVVInputView.placeholder3": "***",
+  "CVVInputView.placeholder4": "****",
+  "CVVInputView.error": "Ungültiges Feld",
+  "CVVInputView.emptyError": "Ungültiges Feld",
+
+  "ExpiryDateInputView.title": "Ablaufdatum",
+  "ExpiryDateInputView.placeholder": "MM/JJ",
+  "ExpiryDateInputView.error": "Ungültiges Feld",
+  "ExpiryDateInputView.emptyError": "Ungültiges Feld",
+
+  "ExpiryDatePickerView.month": "Monat",
+  "ExpiryDatePickerView.year": "Jahr",
+  
+  "AddCardButton.title": "Karte hinzufügen",
+
+  "Alerts.processing": "Wird bearbeitet",
+
+  "ChallengeView.headerTitle": "Sichere Kasse",
+  "ChallengeView.headerCancelTitle" : "Stornieren",
+}

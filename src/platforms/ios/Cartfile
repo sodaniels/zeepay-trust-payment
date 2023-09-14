@@ -1,0 +1,4 @@
+binary "https://gitlab.com/trustpayments-public/mobile-sdk/ios/-/raw/master/TrustPayments/Cardinal/CardinalMobile.json" == 2.2.5
+binary "https://gitlab.com/trustpayments-public/mobile-sdk/ios/-/raw/master/TrustPayments/SeonSDK/SeonSDK.json" == 3.0.6
+github "datatheorem/TrustKit" == 1.6.4
+github "getsentry/sentry-cocoa" == 7.24.1

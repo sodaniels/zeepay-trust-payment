@@ -1,0 +1,328 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+default_simulator = "iPhone 8"
+
+platform :ios do
+  desc "Clear Derived Data"
+  lane :clearDerivedData do 
+  	clear_derived_data
+  end
+
+  ###############
+  ## SDK TESTS ##
+  ###############
+  desc "Run unit tests for the 3D Secure module"
+  lane :threeDModuleTests do
+    runTests(
+      scheme: "TrustPayments3DSecureTests",
+      min_code_coverage: 55,
+      result_bundle: true
+    )
+    trainer(path: "./fastlane/test_output", output_directory: "./trainer_output/threeDTests_report", fail_build: false) 
+  end
+
+  desc "Run unit tests for the Card module"
+  lane :cardModuleTests do
+    runTests(
+      scheme: "TrustPaymentsCardTests",
+      min_code_coverage: 55,
+      result_bundle: true
+    )
+    trainer(path: "./fastlane/test_output", output_directory: "./trainer_output/cardTests_report", fail_build: false) 
+  end
+
+  desc "Run unit tests for the Core module"
+  lane :coreModuleTests do
+    runTests(
+      scheme: "TrustPaymentsCoreTests",
+      min_code_coverage: 55,
+      result_bundle: true
+    )
+    trainer(path: "./fastlane/test_output", output_directory: "./trainer_output/coreTests_report", fail_build: false)     
+  end
+
+  desc "Run unit tests for the UI module"
+  lane :uiModuleTests do
+    runTests(
+      scheme: "TrustPaymentsUITests",
+      result_bundle: true
+    )
+    trainer(path: "./fastlane/test_output", output_directory: "./trainer_output/uiTests_report", fail_build: false) 
+  end
+
+  desc "Run ssl pinning tests"
+  lane :sslPinningTests do
+    runTests(scheme: "SSLPinningTests")
+  end
+
+  desc "Perform Static Analysis"
+  lane :staticAnalysis do
+    swiftlint(
+      mode: :lint,
+      output_file: "swiftlint.result.json",
+      config_file: "./.swiftlint.yml",
+      reporter: "json",
+      strict: true # Fail on warnings? (Default: false)
+    )
+
+    swiftformat(
+      config: "./.swiftformat",
+      lint: true
+    )
+  end
+
+  #######################
+  ## EXAMPLE APP TESTS ##
+  #######################
+  desc "Run UI tests for the Example App"
+  lane :exampleAppUITests do |options|
+    devices = options[:device].nil? ? [default_simulator] : options[:device]
+    scheme = options[:scheme].nil? ? "ExampleUITests" : options[:scheme]
+    runTests(
+      scheme: scheme,
+      devices: devices,
+      result_bundle: true,
+      try_count: 3, # retry _failing_ tests up to three times^1.
+      parallel_testrun_count: 1 # run subsets of your tests on parallel simulators^2,
+    )
+    trainer(path: "./fastlane/test_output", output_directory: "./trainer_output/exampleApp-#{devices}-UITests_report", fail_build: false) 
+  end
+
+  desc "Run E2E tests on BrowserStack."
+  lane :exampleAppUITestsBrowserStack do |options|
+    scheme = "ExampleUITests"
+    devices = options[:devices]
+    
+    username = ENV["BROWSERSTACK_USERNAME"]
+    accessKey = ENV["BROWSERSTACK_ACCESS_KEY"]
+    sh("python3 browserstack_build.py --device '#{devices}' --user '#{username}' --access-key '#{accessKey}' --app-file '../output/TrustPayments_ad-hoc.ipa' --tests-file '../output/#{scheme}-Runner.zip'")
+  end
+
+  desc "Run integration & unit tests for the Example App"
+  lane :exampleAppIntegrationTests do
+    runTests(
+      scheme: "Development",
+      try_count: 3, # retry _failing_ tests up to three times^1.
+      result_bundle: true,
+      fail_build: true,
+    )
+    trainer(path: "./fastlane/test_output", output_directory: "./trainer_output/exampleApp-iPhone 8 (12.4)-integrationTests_report", fail_build: false) 
+  end
+
+  desc "Run unit tests(locale) for the Example App"
+  lane :exampleAppUnitLocaleTests do
+    runTests(scheme: "ExampleLocaleTests")
+  end
+
+  desc "Run Snapshot test"
+  lane :exampleAppSnapshotTests do |options|
+    scan(
+      scheme: "ExampleSnapshotTests",
+      devices: [options[:device]],
+      result_bundle: false
+    )
+  end
+
+  desc "Run only E2E UI tests on iOS 12.4"
+  lane :exampleAppIphone5sSmokeTests do
+    runTests(
+      scheme: "TrustPaymentsUITests",
+      devices: ["iPhone 5s (12.4)"],
+      only_testing: [
+        "TrustPaymentsUITests/TestCardMask/test_isVisaCardMaskValid",
+        "TrustPaymentsUITests/ApplePayTestSuite/testDiscardingApplePayActivityView",
+        "TrustPaymentsUITests/BypassCardsTestSuite/testPaymentWithNonBypassedMasterCard",
+        "TrustPaymentsUITests/UpdateJWTPayloadTestSuite/testPaymentAndAddTipWithDiscover",
+        "TrustPaymentsUITests/UpdateJWTPayloadTestSuite/testPaymentWithMandatoryAndOptionalFieldsWithVisa",
+        "TrustPaymentsUITests/Successful3DSecurePaymentTestSuite/test3DSecureV2NonFrictionlessPaymentVisa",
+        "TrustPaymentsUITests/TokenisationFlowTestSuite/testPaymentWithSavedCardAmex"
+      ],
+      include_in_summary_coverage: false
+    )
+  end 
+  
+  desc "Collects code coverage for selected lanes, combines them display total code coverage for SDK modules"
+  lane :combinedCodeCoverage do
+    # TODO: Coverage has been lowered to 60% and will be improved as part of MSDK-1376
+    # Fail the line if combined code coverage is lower than 60%
+    sh("bash ./combinedCodeCoverage.sh 60", error_callback: ->(result) { UI.test_failure!("The combined code coverage is too low") })
+  end
+
+  desc "Run selected UI and Unit tests at once for the Carthage Integration"
+  lane :carthageIntegrationTests do
+    runTests(
+      workspace: "IntegrationExamples/CarthageIntegration/CarthageIntegration.xcworkspace",
+      scheme: "CarthageIntegration", 
+      include_in_summary_coverage: false
+    )
+  end
+
+  desc "Run selected UI and Unit tests for the CocoaPods Integration"
+  lane :cocoaPodsIntegrationTests do
+    runTests(
+      workspace: "IntegrationExamples/CocoapodsIntegration/CocoapodsIntegration.xcworkspace",
+      scheme: "CocoapodsIntegration",
+      include_in_summary_coverage: false
+    )
+  end
+
+  lane :runTests do |options|
+    workspace = options[:workspace]
+  	scheme = options[:scheme]
+  	devices = options[:devices].nil? ? [default_simulator] : options[:devices]
+  	skip_build = options[:skip_build].nil? ? true : options[:skip_build]
+  	only_testing = options[:only_testing]
+  	skip_trainer = options[:skip_trainer].nil? ? true : options[:skip_trainer]
+  	code_coverage = options[:code_coverage].nil? ? true : options[:code_coverage]
+   	result_bundle = options[:result_bundle].nil? ? true : options[:result_bundle]
+    min_code_coverage = options[:min_code_coverage].nil? ? 0 : options[:min_code_coverage]
+    fail_build = options[:fail_build].nil? ? true : options[:fail_build]
+    try_count = options[:try_count].nil? ? 1 : options[:try_count]
+    parallel_testrun_count = options[:parallel_testrun_count].nil? ? 1 : options[:parallel_testrun_count]
+    include_in_summary_coverage = options[:include_in_summary_coverage].nil? ? true : options[:include_in_summary_coverage]
+
+  	multi_scan(
+      workspace: workspace,
+      scheme: scheme,
+      devices: devices,
+      skip_build: skip_build, 
+      only_testing: only_testing,
+      code_coverage: code_coverage,
+      derived_data_path: 'DerivedData',
+      result_bundle: result_bundle,
+      fail_build: fail_build,
+      try_count: try_count,
+      parallel_testrun_count: parallel_testrun_count,
+      output_types: "html, junit, xcresult"
+   )
+
+    if !skip_trainer
+    	trainer(path: "./fastlane/test_output", output_directory: "./trainer_output")
+    end
+
+    # check code coverage
+    if min_code_coverage > 0
+      sh("cd ..; bash ./coverage.sh #{scheme} #{min_code_coverage}", error_callback: ->(result) { UI.test_failure!("The code coverage is too low") })
+    end
+
+    # copy xcresult to previous directory to create combined coverage
+    if include_in_summary_coverage
+      sh("mkdir -p ~/code_coverage/trust_payments_sdk;rm -r ~/code_coverage/trust_payments_sdk/#{scheme}.xcresult;cp -r test_output/report.xcresult ~/code_coverage/trust_payments_sdk/#{scheme}.xcresult")
+    end
+  end
+
+  ###########
+  ## BUILD ##
+  ###########
+  desc "Build app for App Store or Ad Hoc"
+  lane :buildApp do |options|
+    # app-store or ad-hoc
+    exportMethod = options[:export_method]
+    # Provisioning Profile path
+    ppPath = "#{File.expand_path('~')}#{ENV["PP_PATH"]}"
+    # Code signing identity
+    codeSI = ENV["CODE_SIGNING_IDENTITY"]
+
+    if exportMethod == "ad-hoc"
+      ppPath = "#{File.expand_path('~')}#{ENV["PP_ADHOC_PATH"]}"
+      codeSI = ENV["CODE_SIGNING_IDENTITY_ADHOC"]
+    end
+
+    disable_automatic_code_signing(
+  	  path: "Example/Example.xcodeproj",
+  	  use_automatic_signing: false,
+  	  targets: ["Example"],
+  	  team_id: ENV["TEAM_ID"],
+  	  code_sign_identity: "Apple Distribution"
+	  )
+
+    update_project_provisioning(
+      xcodeproj: "Example/Example.xcodeproj",
+      target_filter: "Example",
+      profile: ppPath,
+      build_configuration: "Development",
+      code_signing_identity: codeSI
+    )
+
+    # Build number
+    build_date = DateTime.now
+    build = build_date.strftime("%Y%m%d%H%M%S")
+
+    # Increment build number
+    increment_build_number(
+   	  build_number: build,
+   	  xcodeproj: "Example/Example.xcodeproj"
+   	)
+
+    gym(
+      workspace: "TrustPayments.xcworkspace",
+      scheme: "Development",
+      include_bitcode: true,
+      export_method: exportMethod,
+      export_options: {
+        provisioningProfiles: { 
+          ENV["BUNDLE_ID"] => ppPath
+    	  }
+      },
+      codesigning_identity: codeSI,
+      output_name: "TrustPayments_#{exportMethod}"
+    )
+  end
+
+  ######################
+  ## BUILD TEST SUITE ##
+  ###################### 
+  desc "Build the project to generate E2E test-suite for BrowserStack."
+  lane :prepareTestSuiteForBrowserStack do |options|
+    scheme = options[:scheme]
+    # Get Provisioning Profile name
+    profPath = "#{File.expand_path('~')}#{ENV["PP_ADHOC_PATH"]}"
+    profileName = sh("/usr/libexec/PlistBuddy -c 'Print :Name' /dev/stdin <<< $(security cms -D -i '#{profPath}')").strip
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      targets: "Example",
+      path: "Example/Example.xcodeproj",
+      profile_name: profileName,
+      code_sign_identity: "Apple Distribution"
+    )
+    update_project_team(
+      path: "Example/Example.xcodeproj",
+      targets: scheme,
+      teamid: ENV["TEAM_ID"]
+    )
+    # Build target for testing with destination real device then gen build path
+    sh("xcodebuild -workspace '../TrustPayments.xcworkspace' -scheme '#{scheme}' build-for-testing -destination 'generic/platform=iOS' -quiet")
+    buildPath = sh("arch -x86_64 xcodebuild -workspace '../TrustPayments.xcworkspace' -scheme '#{scheme}' build-for-testing -destination 'generic/platform=iOS' -quiet -showBuildSettings | grep -m 1 'BUILT_PRODUCTS_DIR' | grep -oEi '\/.*' | tr -d '\n'")
+    runnerPath = "#{buildPath}/#{scheme}-Runner.app"
+    zip(
+      path: runnerPath,
+      output_path: "./output/#{scheme}-Runner.zip"
+    )
+  end
+
+  ############
+  ## UPLOAD ##
+  ############ 
+  desc "Upload build to TestFlight"
+  lane :upload do
+    pilot(
+      ipa: "./output/TrustPayments_app-store.ipa",
+      skip_waiting_for_build_processing: true
+    )
+  end
+end

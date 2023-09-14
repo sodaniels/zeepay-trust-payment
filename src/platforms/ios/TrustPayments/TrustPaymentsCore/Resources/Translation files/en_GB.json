@@ -1,0 +1,34 @@
+{
+  "PayButton.title": "Pay",
+  "PayButton.ataPayByBank": "Pay By Bank",
+  
+  "DropInViewController.successfulPayment": "Payment has been successfully processed",
+
+  "Errors.general": "An error occurred",
+
+  "CardNumberInputView.title": "Card number",
+  "CardNumberInputView.placeholder": "xxxx xxxx xxxx xxxx",
+  "CardNumberInputView.error": "Invalid field",
+  "CardNumberInputView.emptyError": "Invalid field",
+
+  "CVVInputView.title": "CVV",
+  "CVVInputView.placeholder3": "***",
+  "CVVInputView.placeholder4": "****",
+  "CVVInputView.error": "Invalid field",
+  "CVVInputView.emptyError": "Invalid field",
+
+  "ExpiryDateInputView.title": "Expiry date",
+  "ExpiryDateInputView.placeholder": "MM/YY",
+  "ExpiryDateInputView.error": "Invalid field",
+  "ExpiryDateInputView.emptyError": "Invalid field",
+
+  "ExpiryDatePickerView.month": "Month",
+  "ExpiryDatePickerView.year": "Year",
+  
+  "AddCardButton.title": "Add card",
+
+  "Alerts.processing": "Processing",
+
+  "ChallengeView.headerTitle": "SECURE CHECKOUT",
+  "ChallengeView.headerCancelTitle": "Cancel"
+}

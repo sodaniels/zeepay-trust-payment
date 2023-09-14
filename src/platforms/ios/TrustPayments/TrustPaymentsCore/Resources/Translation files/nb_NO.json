@@ -1,0 +1,34 @@
+{
+  "PayButton.title": "Betal",
+  "PayButton.ataPayByBank": "Pay By Bank",
+
+  "DropInViewController.successfulPayment": "Betalingen er fullført",
+
+  "Errors.general": "Det inntraff en feil",
+
+  "CardNumberInputView.title": "Kortnummer",
+  "CardNumberInputView.placeholder": "xxxx xxxx xxxx xxxx",
+  "CardNumberInputView.error": "Ugyldig felt",
+  "CardNumberInputView.emptyError": "Ugyldig felt",
+
+  "CVVInputView.title": "Sikkerhetskode",
+  "CVVInputView.placeholder3": "***",
+  "CVVInputView.placeholder4": "****",
+  "CVVInputView.error": "Ugyldig felt",
+  "CVVInputView.emptyError": "Ugyldig felt",
+
+  "ExpiryDateInputView.title": "Utløpsdato",
+  "ExpiryDateInputView.placeholder": "MM/ÅÅ",
+  "ExpiryDateInputView.error": "Ugyldig felt",
+  "ExpiryDateInputView.emptyError": "Ugyldig felt",
+
+  "ExpiryDatePickerView.month": "Måned",
+  "ExpiryDatePickerView.year": "År",
+  
+  "AddCardButton.title": "Legg til kort",
+
+  "Alerts.processing": "Behandler",
+
+  "ChallengeView.headerTitle": "Sikker utsjekk",
+  "ChallengeView.headerCancelTitle" : "Avbryt",
+}

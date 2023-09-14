@@ -1,0 +1,26 @@
+workspace 'CocoapodsIntegration'
+inhibit_all_warnings!
+platform :ios, '11.0'
+use_frameworks!
+
+target 'CocoapodsIntegration' do
+    pod 'TrustPayments', :path => '../../TrustPayments.podspec'
+    pod 'SwiftJWT', '3.5.3'
+end
+
+target 'CocoapodsIntegrationTests' do
+  pod 'TrustPayments', :path => '../../TrustPayments.podspec'
+end
+
+plugin 'cocoapods-keys', {
+    :project => "CocoapodsIntegration",
+    :keys => [
+      "JWTSecret",
+      "MERCHANT_USERNAME",
+      "MERCHANT_SITEREFERENCE",
+      "WS_USERNAME",
+      "WS_PASSWORD",
+      "WS_SITEREFERENCE",
+      "PASSCODE"
+   ]
+}

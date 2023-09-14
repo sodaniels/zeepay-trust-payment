@@ -1,0 +1,34 @@
+{
+  "PayButton.title": "Betal",
+  "PayButton.ataPayByBank": "Pay By Bank",
+
+  "DropInViewController.successfulPayment": "Betaling er gennemført",
+
+  "Errors.general": "Der er opstået en fejl",
+
+  "CardNumberInputView.title": "Kortnummer",
+  "CardNumberInputView.placeholder": "xxxx xxxx xxxx xxxx",
+  "CardNumberInputView.error": "Ugyldigt felt",
+  "CardNumberInputView.emptyError": "Ugyldigt felt",
+
+  "CVVInputView.title": "Sikkerhedskode",
+  "CVVInputView.placeholder3": "***",
+  "CVVInputView.placeholder4": "****",
+  "CVVInputView.error": "Ugyldigt felt",
+  "CVVInputView.emptyError": "Ugyldigt felt",
+
+  "ExpiryDateInputView.title": "Udløbsdato",
+  "ExpiryDateInputView.placeholder": "MM/ÅÅ",
+  "ExpiryDateInputView.error": "Ugyldigt felt",
+  "ExpiryDateInputView.emptyError": "Ugyldigt felt",
+
+  "ExpiryDatePickerView.month": "Måned",
+  "ExpiryDatePickerView.year": "År",
+  
+  "AddCardButton.title": "Tilføj kort",
+
+  "Alerts.processing": "Behandler",
+
+  "ChallengeView.headerTitle": "Sikker checkout",
+  "ChallengeView.headerCancelTitle" : "Afbestille",
+}

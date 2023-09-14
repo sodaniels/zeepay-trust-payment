@@ -1,0 +1,6 @@
+framework module SeonSDK {
+  umbrella header "SeonSDK.h"
+
+  export *
+  module * { export * }
+}

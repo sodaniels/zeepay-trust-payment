@@ -1,0 +1,25 @@
+workspace 'CarthageIntegration'
+inhibit_all_warnings!
+platform :ios, '11.0'
+use_frameworks!
+
+target 'CarthageIntegration' do
+    pod 'SwiftJWT', '3.5.3'
+end
+
+target 'CarthageIntegrationTests' do
+end
+
+
+plugin 'cocoapods-keys', {
+    :project => "CarthageIntegration",
+    :keys => [
+      "JWTSecret",
+      "MERCHANT_USERNAME",
+      "MERCHANT_SITEREFERENCE",
+      "WS_USERNAME",
+      "WS_PASSWORD",
+      "WS_SITEREFERENCE",
+      "PASSCODE"
+   ]
+}

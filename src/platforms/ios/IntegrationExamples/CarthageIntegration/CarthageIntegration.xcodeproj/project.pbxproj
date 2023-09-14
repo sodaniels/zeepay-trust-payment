@@ -1,0 +1,795 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		102C7095282D029400BDAA26 /* Sentry.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102C7094282D029400BDAA26 /* Sentry.xcframework */; };
+		102C7096282D029400BDAA26 /* Sentry.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 102C7094282D029400BDAA26 /* Sentry.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		102C7098282D029800BDAA26 /* SeonSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102C7097282D029800BDAA26 /* SeonSDK.xcframework */; };
+		102C7099282D029800BDAA26 /* SeonSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 102C7097282D029800BDAA26 /* SeonSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		105ABB2E272AD6B400E7B08A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105ABB2D272AD6B400E7B08A /* AppDelegate.swift */; };
+		105ABB32272AD6B400E7B08A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105ABB31272AD6B400E7B08A /* ViewController.swift */; };
+		105ABB35272AD6B400E7B08A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105ABB33272AD6B400E7B08A /* Main.storyboard */; };
+		105ABB37272AD6B500E7B08A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105ABB36272AD6B500E7B08A /* Assets.xcassets */; };
+		105ABB3A272AD6B500E7B08A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105ABB38272AD6B500E7B08A /* LaunchScreen.storyboard */; };
+		105ABB45272AD6B600E7B08A /* CarthageIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105ABB44272AD6B600E7B08A /* CarthageIntegrationTests.swift */; };
+		105ABB50272AD6B600E7B08A /* CarthageIntegrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105ABB4F272AD6B600E7B08A /* CarthageIntegrationUITests.swift */; };
+		105ABB64272AD7C900E7B08A /* TrustPaymentsCard.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB5E272AD7C900E7B08A /* TrustPaymentsCard.xcframework */; };
+		105ABB65272AD7C900E7B08A /* TrustPaymentsCard.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB5E272AD7C900E7B08A /* TrustPaymentsCard.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		105ABB66272AD7C900E7B08A /* TrustPaymentsUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB5F272AD7C900E7B08A /* TrustPaymentsUI.xcframework */; };
+		105ABB67272AD7C900E7B08A /* TrustPaymentsUI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB5F272AD7C900E7B08A /* TrustPaymentsUI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		105ABB68272AD7C900E7B08A /* TrustPayments3DSecure.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB60272AD7C900E7B08A /* TrustPayments3DSecure.xcframework */; };
+		105ABB69272AD7C900E7B08A /* TrustPayments3DSecure.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB60272AD7C900E7B08A /* TrustPayments3DSecure.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		105ABB6A272AD7C900E7B08A /* TrustKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB61272AD7C900E7B08A /* TrustKit.xcframework */; };
+		105ABB6B272AD7C900E7B08A /* TrustKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB61272AD7C900E7B08A /* TrustKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		105ABB6C272AD7C900E7B08A /* TrustPaymentsCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB62272AD7C900E7B08A /* TrustPaymentsCore.xcframework */; };
+		105ABB6D272AD7C900E7B08A /* TrustPaymentsCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB62272AD7C900E7B08A /* TrustPaymentsCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		105ABB6E272AD7C900E7B08A /* CardinalMobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB63272AD7C900E7B08A /* CardinalMobile.xcframework */; };
+		105ABB6F272AD7C900E7B08A /* CardinalMobile.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105ABB63272AD7C900E7B08A /* CardinalMobile.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		105ABB72272AD99600E7B08A /* TPClaims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105ABB71272AD99600E7B08A /* TPClaims.swift */; };
+		105ABB74272ADD9500E7B08A /* JWTHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105ABB73272ADD9500E7B08A /* JWTHelper.swift */; };
+		51485C30CD942D7BAA072E16 /* Pods_CarthageIntegrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F81D6A8ECCA7471C9068A42 /* Pods_CarthageIntegrationTests.framework */; };
+		BA8F7D741B2E15B2C2F52D4A /* Pods_CarthageIntegration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2DDD546F3565145A2E111C /* Pods_CarthageIntegration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		105ABB41272AD6B600E7B08A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 105ABB22272AD6B400E7B08A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 105ABB29272AD6B400E7B08A;
+			remoteInfo = CarthageIntegration;
+		};
+		105ABB4C272AD6B600E7B08A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 105ABB22272AD6B400E7B08A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 105ABB29272AD6B400E7B08A;
+			remoteInfo = CarthageIntegration;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		105ABB70272AD7C900E7B08A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				105ABB65272AD7C900E7B08A /* TrustPaymentsCard.xcframework in Embed Frameworks */,
+				102C7099282D029800BDAA26 /* SeonSDK.xcframework in Embed Frameworks */,
+				105ABB6D272AD7C900E7B08A /* TrustPaymentsCore.xcframework in Embed Frameworks */,
+				102C7096282D029400BDAA26 /* Sentry.xcframework in Embed Frameworks */,
+				105ABB6B272AD7C900E7B08A /* TrustKit.xcframework in Embed Frameworks */,
+				105ABB67272AD7C900E7B08A /* TrustPaymentsUI.xcframework in Embed Frameworks */,
+				105ABB69272AD7C900E7B08A /* TrustPayments3DSecure.xcframework in Embed Frameworks */,
+				105ABB6F272AD7C900E7B08A /* CardinalMobile.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0A72FD971CB05167C1B0E661 /* Pods-CarthageIntegrationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarthageIntegrationTests.release.xcconfig"; path = "Target Support Files/Pods-CarthageIntegrationTests/Pods-CarthageIntegrationTests.release.xcconfig"; sourceTree = "<group>"; };
+		102C7094282D029400BDAA26 /* Sentry.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Sentry.xcframework; path = Carthage/Build/Sentry.xcframework; sourceTree = "<group>"; };
+		102C7097282D029800BDAA26 /* SeonSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SeonSDK.xcframework; path = Carthage/Build/SeonSDK.xcframework; sourceTree = "<group>"; };
+		10405EFC272BE08E00D2E5BF /* CarthageIntegration-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CarthageIntegration-Bridging-Header.h"; sourceTree = "<group>"; };
+		105ABB2A272AD6B400E7B08A /* CarthageIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarthageIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		105ABB2D272AD6B400E7B08A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		105ABB31272AD6B400E7B08A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		105ABB34272AD6B400E7B08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		105ABB36272AD6B500E7B08A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		105ABB39272AD6B500E7B08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		105ABB3B272AD6B500E7B08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105ABB40272AD6B600E7B08A /* CarthageIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarthageIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		105ABB44272AD6B600E7B08A /* CarthageIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarthageIntegrationTests.swift; sourceTree = "<group>"; };
+		105ABB46272AD6B600E7B08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105ABB4B272AD6B600E7B08A /* CarthageIntegrationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarthageIntegrationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		105ABB4F272AD6B600E7B08A /* CarthageIntegrationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarthageIntegrationUITests.swift; sourceTree = "<group>"; };
+		105ABB51272AD6B600E7B08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105ABB5E272AD7C900E7B08A /* TrustPaymentsCard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrustPaymentsCard.xcframework; path = Carthage/Build/TrustPaymentsCard.xcframework; sourceTree = "<group>"; };
+		105ABB5F272AD7C900E7B08A /* TrustPaymentsUI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrustPaymentsUI.xcframework; path = Carthage/Build/TrustPaymentsUI.xcframework; sourceTree = "<group>"; };
+		105ABB60272AD7C900E7B08A /* TrustPayments3DSecure.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrustPayments3DSecure.xcframework; path = Carthage/Build/TrustPayments3DSecure.xcframework; sourceTree = "<group>"; };
+		105ABB61272AD7C900E7B08A /* TrustKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrustKit.xcframework; path = Carthage/Build/TrustKit.xcframework; sourceTree = "<group>"; };
+		105ABB62272AD7C900E7B08A /* TrustPaymentsCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrustPaymentsCore.xcframework; path = Carthage/Build/TrustPaymentsCore.xcframework; sourceTree = "<group>"; };
+		105ABB63272AD7C900E7B08A /* CardinalMobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CardinalMobile.xcframework; path = Carthage/Build/CardinalMobile.xcframework; sourceTree = "<group>"; };
+		105ABB71272AD99600E7B08A /* TPClaims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPClaims.swift; sourceTree = "<group>"; };
+		105ABB73272ADD9500E7B08A /* JWTHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTHelper.swift; sourceTree = "<group>"; };
+		2F81D6A8ECCA7471C9068A42 /* Pods_CarthageIntegrationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarthageIntegrationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AB74F78AA8D5130C270AEE9 /* Pods-CarthageIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarthageIntegration.release.xcconfig"; path = "Target Support Files/Pods-CarthageIntegration/Pods-CarthageIntegration.release.xcconfig"; sourceTree = "<group>"; };
+		A24C3E307105EC675B9C5998 /* Pods-CarthageIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarthageIntegration.debug.xcconfig"; path = "Target Support Files/Pods-CarthageIntegration/Pods-CarthageIntegration.debug.xcconfig"; sourceTree = "<group>"; };
+		AD2DDD546F3565145A2E111C /* Pods_CarthageIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarthageIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADB4F14186A701DC0E228F5D /* Pods-CarthageIntegrationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarthageIntegrationTests.debug.xcconfig"; path = "Target Support Files/Pods-CarthageIntegrationTests/Pods-CarthageIntegrationTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		105ABB27272AD6B400E7B08A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105ABB64272AD7C900E7B08A /* TrustPaymentsCard.xcframework in Frameworks */,
+				105ABB6C272AD7C900E7B08A /* TrustPaymentsCore.xcframework in Frameworks */,
+				105ABB6A272AD7C900E7B08A /* TrustKit.xcframework in Frameworks */,
+				105ABB66272AD7C900E7B08A /* TrustPaymentsUI.xcframework in Frameworks */,
+				105ABB68272AD7C900E7B08A /* TrustPayments3DSecure.xcframework in Frameworks */,
+				105ABB6E272AD7C900E7B08A /* CardinalMobile.xcframework in Frameworks */,
+				102C7095282D029400BDAA26 /* Sentry.xcframework in Frameworks */,
+				102C7098282D029800BDAA26 /* SeonSDK.xcframework in Frameworks */,
+				BA8F7D741B2E15B2C2F52D4A /* Pods_CarthageIntegration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		105ABB3D272AD6B600E7B08A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51485C30CD942D7BAA072E16 /* Pods_CarthageIntegrationTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		105ABB48272AD6B600E7B08A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		105ABB21272AD6B400E7B08A = {
+			isa = PBXGroup;
+			children = (
+				105ABB2C272AD6B400E7B08A /* CarthageIntegration */,
+				105ABB43272AD6B600E7B08A /* CarthageIntegrationTests */,
+				105ABB4E272AD6B600E7B08A /* CarthageIntegrationUITests */,
+				105ABB2B272AD6B400E7B08A /* Products */,
+				105ABB5D272AD7C900E7B08A /* Frameworks */,
+				851998FFA2F506DED206AFA0 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		105ABB2B272AD6B400E7B08A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				105ABB2A272AD6B400E7B08A /* CarthageIntegration.app */,
+				105ABB40272AD6B600E7B08A /* CarthageIntegrationTests.xctest */,
+				105ABB4B272AD6B600E7B08A /* CarthageIntegrationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		105ABB2C272AD6B400E7B08A /* CarthageIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				105ABB73272ADD9500E7B08A /* JWTHelper.swift */,
+				105ABB71272AD99600E7B08A /* TPClaims.swift */,
+				105ABB2D272AD6B400E7B08A /* AppDelegate.swift */,
+				105ABB31272AD6B400E7B08A /* ViewController.swift */,
+				105ABB33272AD6B400E7B08A /* Main.storyboard */,
+				105ABB36272AD6B500E7B08A /* Assets.xcassets */,
+				105ABB38272AD6B500E7B08A /* LaunchScreen.storyboard */,
+				105ABB3B272AD6B500E7B08A /* Info.plist */,
+				10405EFC272BE08E00D2E5BF /* CarthageIntegration-Bridging-Header.h */,
+			);
+			path = CarthageIntegration;
+			sourceTree = "<group>";
+		};
+		105ABB43272AD6B600E7B08A /* CarthageIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				105ABB44272AD6B600E7B08A /* CarthageIntegrationTests.swift */,
+				105ABB46272AD6B600E7B08A /* Info.plist */,
+			);
+			path = CarthageIntegrationTests;
+			sourceTree = "<group>";
+		};
+		105ABB4E272AD6B600E7B08A /* CarthageIntegrationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				105ABB4F272AD6B600E7B08A /* CarthageIntegrationUITests.swift */,
+				105ABB51272AD6B600E7B08A /* Info.plist */,
+			);
+			path = CarthageIntegrationUITests;
+			sourceTree = "<group>";
+		};
+		105ABB5D272AD7C900E7B08A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				102C7097282D029800BDAA26 /* SeonSDK.xcframework */,
+				102C7094282D029400BDAA26 /* Sentry.xcframework */,
+				105ABB63272AD7C900E7B08A /* CardinalMobile.xcframework */,
+				105ABB61272AD7C900E7B08A /* TrustKit.xcframework */,
+				105ABB60272AD7C900E7B08A /* TrustPayments3DSecure.xcframework */,
+				105ABB5E272AD7C900E7B08A /* TrustPaymentsCard.xcframework */,
+				105ABB62272AD7C900E7B08A /* TrustPaymentsCore.xcframework */,
+				105ABB5F272AD7C900E7B08A /* TrustPaymentsUI.xcframework */,
+				AD2DDD546F3565145A2E111C /* Pods_CarthageIntegration.framework */,
+				2F81D6A8ECCA7471C9068A42 /* Pods_CarthageIntegrationTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		851998FFA2F506DED206AFA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A24C3E307105EC675B9C5998 /* Pods-CarthageIntegration.debug.xcconfig */,
+				3AB74F78AA8D5130C270AEE9 /* Pods-CarthageIntegration.release.xcconfig */,
+				ADB4F14186A701DC0E228F5D /* Pods-CarthageIntegrationTests.debug.xcconfig */,
+				0A72FD971CB05167C1B0E661 /* Pods-CarthageIntegrationTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		105ABB29272AD6B400E7B08A /* CarthageIntegration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 105ABB54272AD6B600E7B08A /* Build configuration list for PBXNativeTarget "CarthageIntegration" */;
+			buildPhases = (
+				CDA89A3E062025C701185249 /* [CP] Check Pods Manifest.lock */,
+				105ABB26272AD6B400E7B08A /* Sources */,
+				105ABB27272AD6B400E7B08A /* Frameworks */,
+				105ABB28272AD6B400E7B08A /* Resources */,
+				105ABB70272AD7C900E7B08A /* Embed Frameworks */,
+				AF4CE176CB40E22A77510FAD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CarthageIntegration;
+			packageProductDependencies = (
+			);
+			productName = CarthageIntegration;
+			productReference = 105ABB2A272AD6B400E7B08A /* CarthageIntegration.app */;
+			productType = "com.apple.product-type.application";
+		};
+		105ABB3F272AD6B600E7B08A /* CarthageIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 105ABB57272AD6B600E7B08A /* Build configuration list for PBXNativeTarget "CarthageIntegrationTests" */;
+			buildPhases = (
+				BB6429C4D76579BDDE0C507E /* [CP] Check Pods Manifest.lock */,
+				105ABB3C272AD6B600E7B08A /* Sources */,
+				105ABB3D272AD6B600E7B08A /* Frameworks */,
+				105ABB3E272AD6B600E7B08A /* Resources */,
+				7110AC42A4A8B0B2175551C6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				105ABB42272AD6B600E7B08A /* PBXTargetDependency */,
+			);
+			name = CarthageIntegrationTests;
+			productName = CarthageIntegrationTests;
+			productReference = 105ABB40272AD6B600E7B08A /* CarthageIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		105ABB4A272AD6B600E7B08A /* CarthageIntegrationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 105ABB5A272AD6B600E7B08A /* Build configuration list for PBXNativeTarget "CarthageIntegrationUITests" */;
+			buildPhases = (
+				105ABB47272AD6B600E7B08A /* Sources */,
+				105ABB48272AD6B600E7B08A /* Frameworks */,
+				105ABB49272AD6B600E7B08A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				105ABB4D272AD6B600E7B08A /* PBXTargetDependency */,
+			);
+			name = CarthageIntegrationUITests;
+			productName = CarthageIntegrationUITests;
+			productReference = 105ABB4B272AD6B600E7B08A /* CarthageIntegrationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		105ABB22272AD6B400E7B08A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					105ABB29272AD6B400E7B08A = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					105ABB3F272AD6B600E7B08A = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 105ABB29272AD6B400E7B08A;
+					};
+					105ABB4A272AD6B600E7B08A = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 105ABB29272AD6B400E7B08A;
+					};
+				};
+			};
+			buildConfigurationList = 105ABB25272AD6B400E7B08A /* Build configuration list for PBXProject "CarthageIntegration" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 105ABB21272AD6B400E7B08A;
+			packageReferences = (
+			);
+			productRefGroup = 105ABB2B272AD6B400E7B08A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				105ABB29272AD6B400E7B08A /* CarthageIntegration */,
+				105ABB3F272AD6B600E7B08A /* CarthageIntegrationTests */,
+				105ABB4A272AD6B600E7B08A /* CarthageIntegrationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		105ABB28272AD6B400E7B08A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105ABB3A272AD6B500E7B08A /* LaunchScreen.storyboard in Resources */,
+				105ABB37272AD6B500E7B08A /* Assets.xcassets in Resources */,
+				105ABB35272AD6B400E7B08A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		105ABB3E272AD6B600E7B08A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		105ABB49272AD6B600E7B08A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7110AC42A4A8B0B2175551C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarthageIntegrationTests/Pods-CarthageIntegrationTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarthageIntegrationTests/Pods-CarthageIntegrationTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarthageIntegrationTests/Pods-CarthageIntegrationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF4CE176CB40E22A77510FAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarthageIntegration/Pods-CarthageIntegration-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarthageIntegration/Pods-CarthageIntegration-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarthageIntegration/Pods-CarthageIntegration-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB6429C4D76579BDDE0C507E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarthageIntegrationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDA89A3E062025C701185249 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarthageIntegration-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		105ABB26272AD6B400E7B08A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105ABB32272AD6B400E7B08A /* ViewController.swift in Sources */,
+				105ABB2E272AD6B400E7B08A /* AppDelegate.swift in Sources */,
+				105ABB72272AD99600E7B08A /* TPClaims.swift in Sources */,
+				105ABB74272ADD9500E7B08A /* JWTHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		105ABB3C272AD6B600E7B08A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105ABB45272AD6B600E7B08A /* CarthageIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		105ABB47272AD6B600E7B08A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105ABB50272AD6B600E7B08A /* CarthageIntegrationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		105ABB42272AD6B600E7B08A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 105ABB29272AD6B400E7B08A /* CarthageIntegration */;
+			targetProxy = 105ABB41272AD6B600E7B08A /* PBXContainerItemProxy */;
+		};
+		105ABB4D272AD6B600E7B08A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 105ABB29272AD6B400E7B08A /* CarthageIntegration */;
+			targetProxy = 105ABB4C272AD6B600E7B08A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		105ABB33272AD6B400E7B08A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				105ABB34272AD6B400E7B08A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		105ABB38272AD6B500E7B08A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				105ABB39272AD6B500E7B08A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		105ABB52272AD6B600E7B08A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		105ABB53272AD6B600E7B08A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		105ABB55272AD6B600E7B08A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A24C3E307105EC675B9C5998 /* Pods-CarthageIntegration.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W785748F69;
+				INFOPLIST_FILE = CarthageIntegration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trustpayments.TrustPayments3DS.CarthageIntegration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CarthageIntegration/CarthageIntegration-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		105ABB56272AD6B600E7B08A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AB74F78AA8D5130C270AEE9 /* Pods-CarthageIntegration.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W785748F69;
+				INFOPLIST_FILE = CarthageIntegration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trustpayments.TrustPayments3DS.CarthageIntegration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CarthageIntegration/CarthageIntegration-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		105ABB58272AD6B600E7B08A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB4F14186A701DC0E228F5D /* Pods-CarthageIntegrationTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W785748F69;
+				INFOPLIST_FILE = CarthageIntegrationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trustpayments.TrustPayments3DS.CarthageIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarthageIntegration.app/CarthageIntegration";
+			};
+			name = Debug;
+		};
+		105ABB59272AD6B600E7B08A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A72FD971CB05167C1B0E661 /* Pods-CarthageIntegrationTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W785748F69;
+				INFOPLIST_FILE = CarthageIntegrationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trustpayments.TrustPayments3DS.CarthageIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarthageIntegration.app/CarthageIntegration";
+			};
+			name = Release;
+		};
+		105ABB5B272AD6B600E7B08A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W785748F69;
+				INFOPLIST_FILE = CarthageIntegrationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trustpayments.TrustPayments3DS.CarthageIntegrationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CarthageIntegration;
+			};
+			name = Debug;
+		};
+		105ABB5C272AD6B600E7B08A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W785748F69;
+				INFOPLIST_FILE = CarthageIntegrationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trustpayments.TrustPayments3DS.CarthageIntegrationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CarthageIntegration;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		105ABB25272AD6B400E7B08A /* Build configuration list for PBXProject "CarthageIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				105ABB52272AD6B600E7B08A /* Debug */,
+				105ABB53272AD6B600E7B08A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		105ABB54272AD6B600E7B08A /* Build configuration list for PBXNativeTarget "CarthageIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				105ABB55272AD6B600E7B08A /* Debug */,
+				105ABB56272AD6B600E7B08A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		105ABB57272AD6B600E7B08A /* Build configuration list for PBXNativeTarget "CarthageIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				105ABB58272AD6B600E7B08A /* Debug */,
+				105ABB59272AD6B600E7B08A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		105ABB5A272AD6B600E7B08A /* Build configuration list for PBXNativeTarget "CarthageIntegrationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				105ABB5B272AD6B600E7B08A /* Debug */,
+				105ABB5C272AD6B600E7B08A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 105ABB22272AD6B400E7B08A /* Project object */;
+}

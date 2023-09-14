@@ -1,0 +1,68 @@
+PODS:
+  - BlueCryptor (1.0.32)
+  - BlueECC (1.2.5)
+  - BlueRSA (1.0.34)
+  - Keys (1.0.1)
+  - KituraContracts (1.2.1):
+    - LoggerAPI (~> 1.7)
+  - LoggerAPI (1.9.200):
+    - Logging (~> 1.1)
+  - Logging (1.4.0)
+  - SwiftJWT (3.5.3):
+    - BlueCryptor (~> 1.0)
+    - BlueECC (~> 1.1)
+    - BlueRSA (~> 1.0)
+    - KituraContracts (~> 1.1)
+    - LoggerAPI (~> 1.7)
+  - TrustKit (1.6.4)
+  - TrustPayments (2.2.1):
+    - TrustPayments/Core (= 2.2.1)
+    - TrustPayments/UI (= 2.2.1)
+  - TrustPayments/3DSecure (2.2.1)
+  - TrustPayments/Card (2.2.1)
+  - TrustPayments/Core (2.2.1):
+    - TrustKit (= 1.6.4)
+    - TrustPayments/3DSecure
+    - TrustPayments/Card
+  - TrustPayments/UI (2.2.1):
+    - TrustPayments/3DSecure
+    - TrustPayments/Card
+    - TrustPayments/Core
+
+DEPENDENCIES:
+  - Keys (from `Pods/CocoaPodsKeys`)
+  - SwiftJWT (= 3.5.3)
+  - TrustPayments (from `../../TrustPayments.podspec`)
+
+SPEC REPOS:
+  trunk:
+    - BlueCryptor
+    - BlueECC
+    - BlueRSA
+    - KituraContracts
+    - LoggerAPI
+    - Logging
+    - SwiftJWT
+    - TrustKit
+
+EXTERNAL SOURCES:
+  Keys:
+    :path: Pods/CocoaPodsKeys
+  TrustPayments:
+    :path: "../../TrustPayments.podspec"
+
+SPEC CHECKSUMS:
+  BlueCryptor: b0aee3d9b8f367b49b30de11cda90e1735571c24
+  BlueECC: 0d18e93347d3ec6d41416de21c1ffa4d4cd3c2cc
+  BlueRSA: 6f9776d62d9773502415a7db3bcbb2bbb3f71fc3
+  Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
+  KituraContracts: e845e60dc8627ad0a76fa55ef20a45451d8f830b
+  LoggerAPI: ad9c4a6f1e32f518fdb43a1347ac14d765ab5e3d
+  Logging: beeb016c9c80cf77042d62e83495816847ef108b
+  SwiftJWT: 9a47a71090cae25767078756b5810e3b630aa9a7
+  TrustKit: 578f77c59a23167e55b523d460bb495114ed0de7
+  TrustPayments: a45fc2929e3cd5e6d21091b61b537b71c3450f1b
+
+PODFILE CHECKSUM: 8a7ba97b3c6a587674dfaeef975dc6bd2a3913b6
+
+COCOAPODS: 1.11.2

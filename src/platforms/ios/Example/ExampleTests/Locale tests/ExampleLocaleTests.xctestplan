@@ -1,0 +1,80 @@
+{
+  "configurations" : [
+    {
+      "id" : "62B4B642-6240-4A99-83FF-C587AAEF3360",
+      "name" : "Polish",
+      "options" : {
+        "commandLineArgumentEntries" : [
+          {
+            "argument" : "-AppleLanguages (pl-PL)"
+          }
+        ]
+      }
+    },
+    {
+      "id" : "C31857EA-5EA5-49E9-9718-957D7E0887B1",
+      "name" : "French",
+      "options" : {
+        "commandLineArgumentEntries" : [
+          {
+            "argument" : "-AppleLanguages (fr-FR)"
+          }
+        ]
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:..\/TrustPayments\/TrustPayments.xcodeproj",
+          "identifier" : "08E4FA692462A5EC00837339",
+          "name" : "TrustPaymentsCore"
+        },
+        {
+          "containerPath" : "container:..\/TrustPayments\/TrustPayments.xcodeproj",
+          "identifier" : "08EF7D3D2462B12F008B5F3E",
+          "name" : "TrustPaymentsUI"
+        },
+        {
+          "containerPath" : "container:..\/TrustPayments\/TrustPayments.xcodeproj",
+          "identifier" : "104CFB08246ECD7F00D7C76D",
+          "name" : "TrustPayments3DSecure"
+        },
+        {
+          "containerPath" : "container:..\/TrustPayments\/TrustPayments.xcodeproj",
+          "identifier" : "1092CF3E2476CA1F0002B2E8",
+          "name" : "TrustPaymentsCard"
+        }
+      ]
+    },
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "-isTesting YES"
+      }
+    ]
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : [
+        "TestGatewayLocale\/test_jwtWithFrenchLocale()",
+        "TestGatewayLocale\/test_jwtWithGermanLocale()",
+        "TestGatewayLocale\/test_jwtWithSpanishLocale()",
+        "TestGatewayLocale\/test_jwtWithSwedishLocale()",
+        "TestGatewayLocale\/test_jwtWithWelshLocale()",
+        "TestLocale\/test_deviceSettingsCustomFrenchTranslation()",
+        "TestLocale\/test_deviceSettingsNotSupportedCustomEnglishTranslation()",
+        "TestLocale\/test_deviceSettingsNotSupportedSDKInitedWithLocaleCustomEnglishTranslation()",
+        "TestLocale\/test_deviceSettingsNotSupportedSDKInitedWithUnsupportedLocaleCustomEnglishTranslation()",
+        "TestLocale\/test_deviceSettingsSupportedCustomEnglishTranslation()",
+        "TestLocale\/test_deviceSettingsSupportedCustomGermanTranslation()"
+      ],
+      "target" : {
+        "containerPath" : "container:Example.xcodeproj",
+        "identifier" : "08E4FA932462A7D800837339",
+        "name" : "ExampleTests"
+      }
+    }
+  ],
+  "version" : 1
+}

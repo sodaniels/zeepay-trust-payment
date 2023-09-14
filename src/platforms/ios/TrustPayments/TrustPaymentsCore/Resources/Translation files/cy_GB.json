@@ -1,0 +1,34 @@
+{
+  "PayButton.title": "Talu",
+  "PayButton.ataPayByBank": "Pay By Bank",
+
+  "DropInViewController.successfulPayment": "Mae'r taliad wedi ei brosesu'n llwyddiannus",
+
+  "Errors.general": "Digwyddodd gwall",
+
+  "CardNumberInputView.title": "Rhif y cerdyn",
+  "CardNumberInputView.placeholder": "xxxx xxxx xxxx xxxx",
+  "CardNumberInputView.error": "Maes annilys",
+  "CardNumberInputView.emptyError": "Maes annilys",
+
+  "CVVInputView.title": "Cod diogelwch",
+  "CVVInputView.placeholder3": "***",
+  "CVVInputView.placeholder4": "****",
+  "CVVInputView.error": "Maes annilys",
+  "CVVInputView.emptyError": "Maes annilys",
+
+  "ExpiryDateInputView.title": "Dyddiad dod i ben",
+  "ExpiryDateInputView.placeholder": "MM/BB",
+  "ExpiryDateInputView.error": "Maes annilys",
+  "ExpiryDateInputView.emptyError": "Maes annilys",
+
+  "ExpiryDatePickerView.month": "Mis",
+  "ExpiryDatePickerView.year": "Blwyddyn",
+  
+  "AddCardButton.title": "Ychwanegu cerdyn",
+
+  "Alerts.processing": "Wrthi'n prosesu",
+
+  "ChallengeView.headerTitle": "Talid diogel",
+  "ChallengeView.headerCancelTitle" : "Canslo",
+}
