@@ -1,0 +1,9 @@
+<platform name="ios">
+    <!-- Include Swift files -->
+    <source-file src="src/platforms/ios/TrustPayments/TrustPaymentsCore/Source files/TrustPayments.swift" target-dir="src/platforms/ios" />
+    <!-- <source-file src="src/platforms/ios/OtherSwiftFile.swift" target-dir="src/platforms/ios" /> -->
+  
+    <!-- Include TypeScript declaration files -->
+    <header-file src="rc/platforms/ios/TrustPayments/TrustPaymentsCore/Source files/TrustPayments.d.ts" />
+    <!-- Include other TypeScript declaration files if needed -->
+  </platform>

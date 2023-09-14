@@ -1,6 +1,6 @@
 {
-	"name": "nativescript-zeepay-trust-payment",
-	"version": "1.0.4",
+	"name": "nativescript-zeepay-trustpayment",
+	"version": "0.0.1",
 	"description": "Your awesome NativeScript plugin.",
 	"main": "zeepay-trust-payment",
 	"typings": "index.d.ts",
